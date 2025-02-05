@@ -1,17 +1,27 @@
+// Comments follow standard setup a la Rust etc.
+// § denotes a Section
+// @ denotes a Location.
+// & denotes a Character
+// For initial setup, it is best to plan for either a file tree or db format.
+// Let's go with directory for now
+<The Path of the Digger> //Title of this file. I think the file name Should be a snake_case match for this →the_path_of_the_digger.whim
+
 § The Path of the Digger {
-§ Sunrise;
-§ Bequest at the Waning;
-§ Phantoms on the Road;
-§ The Brothers Revenant;
-§ First Separation;
-§ The Distant Hum of Artifice;
-§ Awaken the Sigil Fulminant;
-§ Window to the Sky;
-§ Awaken the Sigil Mellifluent;
-§ And Never the Twain;
-§ Fenn Revenes Alone;
+/Sunrise; // Each document noted behind a / is considered a .whim file to refer to for generation.
+/Bequest at the Waning;
+/Phantoms on the Road;
+/The Brothers Revenant;
+/First Separation;
+/The Distant Hum of Artifice;
+/Awaken the Sigil Fulminant;
+/Window to the Sky;
+/Awaken the Sigil Mellifluent;
+/And Never the Twain;
+/Fenn Revenes Alone;
 }
 
+
+// TODO: Move the sublocation declarations to the hauntstones directory
 @ Hauntstones {
 @ Sixwell;
 @ The Stroke;
@@ -20,6 +30,7 @@
 @ The Kenwood Encroachment;
 }
 
+//By default, the cfg responder should look for declared Character files in the Characters dir. If they dont exist, generate them. 
 & {
 Fenn;
 Will;
