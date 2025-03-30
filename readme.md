@@ -11,6 +11,7 @@ Stay tuned!
 
 ## Architecture Outline
 
+```
 root
 /my_narrative.whim
 |sequences/
@@ -24,13 +25,20 @@ root
 |characters/
 -/this_guy.whim
 |artifacts/
+```
 
 So a given .whim file should designate itself in its first line
+
 <Canon> - expects subdirectories for narratives, sequences, locations, characters, and artifacts
+
 <Narrative> - expects subdirectories for sequences, locations, artifacts, and characters
+
 <Sequence> - expects subdirectories for each subsequence referenced in the file
+
 <Location> - expects subdirectories for each sublocation referenced in the file
+
 <Character>
+
 <Artifact>
 
 The main file in the root directory of the project is the primary reference for everything else.
