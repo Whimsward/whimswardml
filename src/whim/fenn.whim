@@ -1,3 +1,5 @@
 <!WHIMDOC CHARACTER>
 
-NAME::Fenn
+NAME::Fenn;
+
+ARTIFACTS::sigil-of-fulminance.whim,unstrung-bowstave;
