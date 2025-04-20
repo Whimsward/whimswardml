@@ -49,3 +49,7 @@ The main file in the root directory of the project is the primary reference for 
 `FIELDTAG::tag-content;` - For example, a Character has a Name. This can be designated using `NAME::This-Guy;` A Character may also have a list of Artifacts. This reference can be made by `ARTIFACTS::That-Sword.whim,Salamander-Scale.whim;`
 
 For fields that have tag content including ".whim" the content (comma separated) will prompt the engine to reference that file name in the corresponding directory.
+
+Fields with tag content that is not a reference to another file will parse the text of that content preserving capitals and converting `-` to a single space. 
+
+Fields with tag content enclosed in 'single quotes' will be parsed as raw strings. This is recommended for any longer text content or shorter content that should include the more conventional use of the hyphen character.
