@@ -3,3 +3,9 @@
 NAME::Fenn;
 
 ARTIFACTS::sigil-of-fulminance.whim,unstrung-bowstave;
+
+DESCRIPTION::'A boy from the village of Sixwell with a forward disposition.';
+
+THEME-COLORS::red,orange;
+
+ALIGNED::Resonance,Assertion;
