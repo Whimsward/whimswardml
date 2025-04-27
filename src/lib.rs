@@ -7,6 +7,12 @@ const SILCROW : &str = "§";
 
 const WHIM : &str = "src/whim/";
 
+const DOCTAG : &str = "<!WHIMDOC";
+
+const CLOSE_TAG : &str = ">";
+
+const SEMICOLON : &str = ";";
+
 pub trait Declaration {
     fn decl(text: &str) -> Decl;
 }
