@@ -7,15 +7,36 @@ const SILCROW : &str = "§";
 
 const WHIM : &str = "src/whim/";
 
+/// Opens a document type declaration a la html
 const DOCTAG : &str = "<!WHIMDOC";
 
+
+/// Closes a tag
 const CLOSE_TAG : &str = ">";
+
 
 const SEMICOLON : &str = ";";
 
 pub trait Declaration {
     fn decl(text: &str) -> Decl;
 }
+
+pub struct DocDecl {
+    name : String,
+}
+
+impl Declaration for DocDecl {
+    fn decl(text: &str) -> Decl {
+        let full_decl = format!(
+            "{} {}{}",
+            DOCTAG,
+            text,
+            CLOSE_TAG
+        );
+        DocDeclaration(full_decl)
+    }
+}
+
 
 pub struct SectionDecl {
     name : String,
@@ -45,6 +66,7 @@ impl Declaration for NullDecl {
 
 #[derive (Debug,PartialEq)]
 pub enum Decl {
+    DocDeclaration(String),
     SectionDeclaration(String),
     NullDeclaration(String),
 }
