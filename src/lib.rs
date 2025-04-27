@@ -72,6 +72,22 @@ pub enum Decl {
 }
 
 
+/// Enumerates the types of Whimsward Document supported by the parser
+#[derive (Debug)]
+pub enum WhimsDoc {
+    Canon(String),
+    Narrative(String),
+    Sequence(String),
+    Character(String),
+    Artifact(String),
+}
+
+pub fn get_doc_type(whim_doc : String) -> WhimsDoc {
+    let lines = whim_doc.lines();
+    if 
+    
+}
+
 /// Checks if a line starts with a Silcrow to indicate a section
 pub fn is_section(line: &str) -> bool {
     if line.starts_with(SILCROW) {
