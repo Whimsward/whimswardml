@@ -71,15 +71,32 @@ pub enum Decl {
     NullDeclaration(String),
 }
 
+
+/// Checks if a line starts with a Silcrow to indicate a section
 pub fn is_section(line: &str) -> bool {
     if line.starts_with(SILCROW) {
         true
     } else {false}
 }
 
+/// Checks if a line starts with DOCTAG.
+pub fn is_whimdoc(file_contents : &str) -> bool {
+    if file_contents.starts_with(DOCTAG) {
+         true
+    } else {false}
+}
+
+
 pub fn whimsward(file_name: &str) -> String {
     let full_path = WHIM.to_owned() + file_name;
     let result = fs::read_to_string(full_path);
+    
+    if is_whimdoc(result.unwrap()) {
+        result.unwrap()
+    } else { 
+        String::from("This is not a Whimsward document.")
+    }
+
     match result {
         Ok(content) => content,
         Err(e_message) => e_message.to_string(),
