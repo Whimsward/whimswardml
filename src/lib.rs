@@ -80,11 +80,22 @@ pub enum WhimsDoc {
     Sequence(String),
     Character(String),
     Artifact(String),
+    Invalid(String),
 }
 
 pub fn get_doc_type(whim_doc : String) -> WhimsDoc {
     let lines = whim_doc.lines();
-    if 
+    let this_decl = lines[0];
+    if this_decl.starts_with(DOCTAG) {
+        let strip_doctag = this_decl.lstrip(10);
+        let justtag = strip_doctag.rstrip(1);
+        match justtag {
+            "NARRATIVE" => WhimsDoc::Narrative(whim_doc);
+            //TODO
+        }
+    } else {
+        WhimsDoc::Invalid(whim_doc)
+    }
     
 }
 
